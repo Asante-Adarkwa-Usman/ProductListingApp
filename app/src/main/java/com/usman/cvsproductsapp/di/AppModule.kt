@@ -71,9 +71,10 @@ object AppModule {
             .build()
     }
 
+    //Provides Retrofit Service
     @Provides
     @Singleton
-    fun providesApiService(retrofit: Retrofit): ApiDetails {
+    fun providesRetrofitService(retrofit: Retrofit): ApiDetails {
         return retrofit.create(ApiDetails::class.java)
     }
 
@@ -85,7 +86,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesProductsRepository(
+    fun providesProductUseCase(
         productsRepository: ProductsRepository
     ) : ProductsUseCase = ProductsUseCaseImpl(productsRepository)
 
