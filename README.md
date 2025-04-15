@@ -11,7 +11,7 @@ This is a simple Android app built with Kotlin and Jetpack Compose. It uses the 
 ## 🎥 Demo
 
 
-[▶️ Watch Demo Video](assets/demovideo.mp4)
+[▶️ Watch Demo Video](https://github.com/Asante-Adarkwa-Usman/ProductListingApp/assets/demovideo.mp4)
 
 Or preview below:
 
