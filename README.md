@@ -11,11 +11,11 @@ This is a simple Android app built with Kotlin and Jetpack Compose. It uses the 
 ## 🎥 Demo
 
 
-[▶️ Watch Demo Video](https://github.com/Asante-Adarkwa-Usman/ProductListingApp/assets/demovideo.mp4)
+[▶️ Watch Demo Video](https://github.com/Asante-Adarkwa-Usman/ProductListingApp/assets/appdemo.mp4)
 
 Or preview below:
 
-<video src="assets/demo/demovideo.mp4" width="100%" controls></video>
+<video src="assets/demo/appdemo.mp4" width="100%" controls></video>
 
 ## 🚀 Features
 
