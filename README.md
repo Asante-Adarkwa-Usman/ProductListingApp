@@ -6,11 +6,14 @@ This is a simple Android app built with Kotlin and Jetpack Compose. It uses the 
 
 | Product List Screen | Product Detail & Edit |
 |---------------------|------------------------|
-| ![Product List](screenshot/productlisting.png) | ![Edit Product](screenshot/productdetails.png) |
+<p float="left">
+  <img src="screenshot/productlisting.png" width="30%" />
+  <img src="screenshot/productdetails.png" width="30%" />
+</p>
 
 ## 🎥 Demo
 
- [Watch Demo Video](https://github.com/Asante-Adarkwa-Usman/ProductListingApp/raw/main/assets/demo/appdemo.mp4)
+ <img src="assets/demo/appdemo.gif" width="300" height="650">
 
  
 
