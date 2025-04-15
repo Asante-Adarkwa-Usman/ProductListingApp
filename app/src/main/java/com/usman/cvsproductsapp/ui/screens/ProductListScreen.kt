@@ -22,6 +22,7 @@ import androidx.navigation.NavHostController
 import com.usman.cvsproductsapp.ui.vm.ProductListViewModel
 import com.usman.cvsproductsapp.ui.widgets.ProductCard
 import com.usman.cvsproductsapp.utils.UiStatus
+import com.usman.cvsproductsapp.utils.routes.UPDATE_PRODUCT_ROUTE
 
 
 @Composable
@@ -46,11 +47,16 @@ fun ProductListScreen(navController: NavHostController, viewModel: ProductListVi
                 is UiStatus.Success -> {
                     val productList = (productsUiState as UiStatus.Success).data
                     // Display the product list
-                    Text("Product List Screen")
+                    Text("Product Listing")
                     Spacer(modifier = Modifier.height(10.dp))
                     LazyColumn {
                         items(productList){ product ->
-                            ProductCard(product = product)
+                            ProductCard(
+                                product = product,
+                                onProductClick = {
+                                    navController.navigate("$UPDATE_PRODUCT_ROUTE/${product.id}")
+                                }
+                            )
                         }
                     }
                 }

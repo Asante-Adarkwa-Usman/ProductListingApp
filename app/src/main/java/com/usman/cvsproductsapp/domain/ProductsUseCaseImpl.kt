@@ -13,10 +13,16 @@ class ProductsUseCaseImpl@Inject constructor(
         return productsRepository.getAllProducts()
     }
 
-    override suspend fun updateProduct(id: Int, product: ProductItemModel): Flow<UiStatus<ArrayList<ProductItemModel>>> {
-       return productsRepository.updateProduct(id,product)
+    override suspend fun updateProduct(
+        id: Int,
+        product: ProductItemModel
+    ): Flow<UiStatus<ProductItemModel>> {
+        return productsRepository.updateProduct(id,product)
     }
 
+    override suspend fun getSpecificProductById(id: Int): Flow<UiStatus<ProductItemModel>> {
+        return productsRepository.getSpecificProduct(id)
+    }
 
 
 }

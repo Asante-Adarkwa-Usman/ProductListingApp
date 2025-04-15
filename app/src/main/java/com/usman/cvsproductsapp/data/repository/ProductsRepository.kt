@@ -9,5 +9,8 @@ interface ProductsRepository {
     suspend fun getAllProducts(): Flow<UiStatus<ArrayList<ProductItemModel>>>
 
     //update product list
-    suspend fun updateProduct(id:Int, product: ProductItemModel): Flow<UiStatus<ArrayList<ProductItemModel>>>
+    suspend fun updateProduct(id:Int, product: ProductItemModel): Flow<UiStatus<ProductItemModel>>
+
+    //Get product by id
+    suspend fun getSpecificProduct(id: Int): Flow<UiStatus<ProductItemModel>>
 }

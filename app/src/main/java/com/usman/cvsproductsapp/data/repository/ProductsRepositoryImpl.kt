@@ -25,16 +25,34 @@ class ProductsRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun updateProduct(id: Int, product: ProductItemModel): Flow<UiStatus<ArrayList<ProductItemModel>>> = flow {
+    override suspend fun updateProduct(id: Int, product: ProductItemModel): Flow<UiStatus<ProductItemModel>> = flow {
         emit(UiStatus.Loading)
         try {
             val result = apiDetails.updateProduct(id, product)
-            if (result.isSuccessful){
+            if (result.isSuccessful) {
                 val updatedProduct = result.body()
                 updatedProduct?.let {
                     emit(UiStatus.Success(updatedProduct))
-                } ?: emit(UiStatus.Error("List is null or empty"))
-            } else emit(UiStatus.Error("Failed to update product"))
+                } ?: emit(UiStatus.Error("Updated product is null or empty"))
+            } else {
+                emit(UiStatus.Error("Failed to update product"))
+            }
+        } catch (e: Exception) {
+            emit(UiStatus.Error(e.toString()))
+        }
+    }
+
+    override suspend fun getSpecificProduct(id: Int): Flow<UiStatus<ProductItemModel>> = flow{
+
+        emit(UiStatus.Loading)
+        try {
+            val result = apiDetails.getProductById(id)
+            if (result.isSuccessful){
+                val specificProduct = result.body()
+                specificProduct?.let {
+                    emit(UiStatus.Success(specificProduct))
+                } ?: emit(UiStatus.Error("List is null"))
+            } else emit(UiStatus.Error("Data retrieval failed"))
         } catch (e:Exception){
             emit(UiStatus.Error(e.toString()))
         }

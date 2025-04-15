@@ -42,6 +42,7 @@ object AppModule {
         }
     }
 
+    //OkHttp Client
     @Provides
     @Singleton
     fun providesOkHttpClient(
@@ -78,34 +79,18 @@ object AppModule {
         return retrofit.create(ApiDetails::class.java)
     }
 
+    //Product Repository
     @Provides
     @Singleton
     fun providesProductRepository(
         apiDetails: ApiDetails
     ): ProductsRepository = ProductsRepositoryImpl(apiDetails)
 
+
+    //Product Use Case
     @Provides
     @Singleton
     fun providesProductUseCase(
         productsRepository: ProductsRepository
     ) : ProductsUseCase = ProductsUseCaseImpl(productsRepository)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

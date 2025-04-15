@@ -12,9 +12,15 @@ interface ApiDetails {
     @GET(ApiReference.PRODUCTS_END_POINT)
     suspend fun getProducts(): Response<ArrayList<ProductItemModel>>
 
-    @PUT(ApiReference.PRODUCT_DETAIL_END_POINT)
+    //Get product by id
+    @GET("${ApiReference.PRODUCTS_END_POINT}/{id}")
+    suspend fun getProductById(
+        @Path("id") id: Int
+    ): Response<ProductItemModel>
+
+    @PUT("${ApiReference.PRODUCTS_END_POINT}/{id}")
     suspend fun updateProduct(
-        @Path(ApiReference.PRODUCT_DETAIL_END_POINT) id:Int,
+        @Path("id") id: Int,
         @Body product: ProductItemModel
-    ): Response<ArrayList<ProductItemModel>>
+    ): Response<ProductItemModel>
 }

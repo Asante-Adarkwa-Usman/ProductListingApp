@@ -1,6 +1,7 @@
 package com.usman.cvsproductsapp.ui.widgets
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
@@ -19,11 +20,12 @@ import androidx.compose.ui.graphics.Color
 import com.usman.cvsproductsapp.data.model.ProductItemModel
 
 @Composable
-fun ProductCard(product: ProductItemModel) {
+fun ProductCard(product: ProductItemModel, onProductClick: (Int) -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
+            .clickable { onProductClick(product.id) }
     ) {
         Column(
             modifier = Modifier.padding(16.dp)
