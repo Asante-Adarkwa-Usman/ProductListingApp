@@ -10,12 +10,9 @@ This is a simple Android app built with Kotlin and Jetpack Compose. It uses the 
 
 ## 🎥 Demo
 
+ [Watch Demo Video](https://github.com/Asante-Adarkwa-Usman/ProductListingApp/raw/main/assets/demo/appdemo.mp4)
 
-[▶️ Watch Demo Video](https://github.com/Asante-Adarkwa-Usman/ProductListingApp/assets/appdemo.mp4)
-
-Or preview below:
-
-<video src="assets/demo/appdemo.mp4" width="100%" controls></video>
+ 
 
 ## 🚀 Features
 
